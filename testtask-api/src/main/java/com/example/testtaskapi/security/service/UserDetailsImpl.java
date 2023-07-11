@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.stereotype.Service;
 
 import java.io.Serial;
 import java.util.Collection;
@@ -14,6 +15,7 @@ import java.util.Objects;
 @AllArgsConstructor
 @Data
 @Builder
+@Service
 public class UserDetailsImpl implements UserDetails {
 
     @Serial
