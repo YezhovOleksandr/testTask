@@ -22,14 +22,14 @@ import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
 
-@RequiredArgsConstructor
+
 public class AuthTokenFilter extends OncePerRequestFilter {
 
+    @Autowired
+    private  JwtUtils jwtUtils;
 
-    private final JwtUtils jwtUtils;
-
-
-    private final UserDetailsServiceImpl userDetailsService;
+    @Autowired
+    private  UserDetailsServiceImpl userDetailsService;
 
     private static final Logger logger = LoggerFactory.getLogger(AuthTokenFilter.class);
 
