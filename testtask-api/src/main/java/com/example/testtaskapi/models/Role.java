@@ -5,17 +5,22 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 @Entity
-@Table(name = "Roles")
-@RequiredArgsConstructor
+@Table(name = "roles")
 @Data
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Enumerated(EnumType.STRING)
     @Column(length = 20)
     private ERole name;
 
+    public Role() {
 
+    }
+
+    public Role(ERole name) {
+        this.name = name;
+    }
 }

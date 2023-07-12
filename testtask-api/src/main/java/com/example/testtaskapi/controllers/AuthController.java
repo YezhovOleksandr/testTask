@@ -11,7 +11,6 @@ import com.example.testtaskapi.repository.RoleRepository;
 import com.example.testtaskapi.repository.UserRepository;
 import com.example.testtaskapi.security.jwt.JwtUtils;
 import com.example.testtaskapi.security.service.UserDetailsImpl;
-import io.jsonwebtoken.Jwt;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -26,11 +25,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api/v1/auth")
 @RequiredArgsConstructor
 public class AuthController {
 
