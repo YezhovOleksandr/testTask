@@ -3,6 +3,7 @@ package com.example.testtaskapi.models;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
+import org.hibernate.annotations.NaturalId;
 
 @Entity
 @Table(name = "roles")
@@ -13,6 +14,7 @@ public class Role {
     private Integer id;
 
     @Enumerated(EnumType.STRING)
+    @NaturalId
     @Column(length = 20)
     private ERole name;
 
