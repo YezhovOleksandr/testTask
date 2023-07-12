@@ -6,5 +6,6 @@ import lombok.Data;
 @AllArgsConstructor
 @Data
 public class MessageResponse {
+    private Boolean success;
     private String message;
 }
