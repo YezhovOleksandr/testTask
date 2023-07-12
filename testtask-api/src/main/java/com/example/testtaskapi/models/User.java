@@ -1,16 +1,15 @@
 package com.example.testtaskapi.models;
 
+import com.example.testtaskapi.models.audit.DateAudit;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+import lombok.*;
 
 import java.util.HashSet;
 import java.util.Set;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "users",
 uniqueConstraints = {
@@ -20,7 +19,7 @@ uniqueConstraints = {
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
-public class User {
+public class User extends DateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
